@@ -1,0 +1,156 @@
+<!-- also you can use react, angular etc. at here -->
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Xuina</title>
+    <link rel="icon" type="image/jpg" href="./assets/logo.jpg" />
+    <script
+      src="https://code.jquery.com/jquery-3.6.0.min.js"
+      integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
+      crossorigin="anonymous"></script>
+      <script
+        src="https://code.jquery.com/ui/1.13.0/jquery-ui.min.js"
+        integrity="sha256-hlKLmzaRlE8SCJC1Kw8zoUbU8BxA+8kR3gseuKfMjxA="
+        crossorigin="anonymous"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.css" rel="stylesheet" type="text/css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/limonte-sweetalert2/7.33.1/sweetalert2.js"></script>
+    <script src="./scripts/jscolor.min.js"></script>
+    <link rel="stylesheet" href="./styling/Xuina.css">
+  </head>
+  <body>
+  <div class = "the-container" id = "main-container">
+    <div class ="drag">
+      <img src = "./assets/logo.jpg" height="0" width="0">Crypto / FiveX Edition
+    </div>
+
+    <div class="accordion" id="main-menu">
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="on-off-menu">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMain" aria-expanded="true" aria-controls="collapseMain">
+                    SELF OPTIONS
+                </button>
+            </h2>
+            <div id="collapseMain" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <ul class="form">
+                        <li onClick="superJump()"><a class="normal-text">Super Jump <em id="superJumpToggle">false</em></a></li>
+                        <li onClick="fastRun()"><a class="normal-text">Fast Run <em id="fastRunToggle">false</em></a></li>
+                        <li onClick="thermalVision()"><a class="normal-text">Thermal Vision <em id="thermalVisionToggle">false</em></a></li>
+                        <li onClick="nightVision()"><a class="normal-text">Night Vision <em id="nightVisionToggle">false</em></a></li>
+                        <li onClick="crossHair()"><a class="normal-text">Cross Hair <em id="crossHairToggle">false</em></a></li>
+                        <li onClick="noClip()"><a class="normal-text">Noclip <em id="noClipToggle">false</em></a></li>
+                        <li onClick="rainbowVehicle()"><a class="normal-text">Rainbow Vehicle <em id="rainbowVehicleToggle">false</em></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="weapon-menus">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseWeapon" aria-expanded="true" aria-controls="collapseWeapon">
+                    WEAPON
+                </button>
+            </h2>
+            <div id="collapseWeapon" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <ul class="form">
+                        <li onClick="spawnSingleWeapon()"><a class="normal-text">Spawn Single Weapon</a></li>
+                        <li onClick="giveAllWeapons()"><a class="normal-text">Give All Weapons</a></li>
+                        <li onClick="removeAllWeapons()"><a class="normal-text">Remove All Weapons</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="weapon-menus">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseVehicle" aria-expanded="true" aria-controls="collapseVehicle">
+                    VEHICLE
+                </button>
+            </h2>
+            <div id="collapseVehicle" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <ul class="form">
+                        <li onClick=""><a class="normal-text">Color 1: <input onchange="changeCarColor(this.value)" value="rgb(235,0,41)" data-jscolor="{}"></a></li>
+                        <li onClick=""><a class="normal-text">Color 2: <input onchange="changeCarSecondaryColor(this.value)" value="rgb(235,0,41)" data-jscolor="{}"></a></li>
+                        <li onClick="repairVehicle()"><a class="normal-text">Repair Vehicle</a></li>
+                        <li onClick="repairEngineOnly()"><a class="normal-text">Repair Engine Only</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="weapon-menus">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTeleport" aria-expanded="true" aria-controls="collapseTeleport">
+                    TELEPORT
+                </button>
+            </h2>
+            <div id="collapseTeleport" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <ul class="form">
+                        <li onClick="teleportToWaypoint()"><a class="normal-text">To waypoint</a></li>
+                        <li onClick="teleportToNearestVehicle()"><a class="normal-text">To nearest Vehicle</a></li>
+                        <li onClick="teleportToNearestPed()"><a class="normal-text">To nearest Ped</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="weapon-menus">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAI" aria-expanded="true" aria-controls="collapseAI">
+                    ARTIFICIAL INTELLIGENCE
+                </button>
+            </h2>
+            <div id="collapseAI" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <ul class="form">
+                        <li onClick="glifeAutoFarm()"><a class="normal-text">Auto farm (glife)</a></li>
+                        <li onClick="glifeXpBot()"><a class="normal-text">XP bot (glife)</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="weapon-menus">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTroll" aria-expanded="true" aria-controls="collapseTroll">
+                    TROLLING
+                </button>
+            </h2>
+            <div id="collapseTroll" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <ul class="form">
+                        <li onClick="mitoticDivision()"><a class="normal-text">Mitotic Division</a></li>
+                        <li onClick="mitoticDivisionCrash()"><a class="normal-text">Mitotic Division ( Crash Everyone Nearby You )</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="accordion-item">
+            <h2 class="accordion-header" id="weapon-menus">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAI" aria-expanded="true" aria-controls="collapseAI">
+                    CREDITS
+                </button>
+            </h2>
+            <div id="collapseAI" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                    <ul class="form">
+                        <li onClick="kro"><a class="normal-text">Krolix (DEV)</a></li>
+                        <li onClick="MT"><a class="normal-text">MT (FiveX DEV)</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+    </div>
+  </div>
+  <script type="text/javascript" src="./scripts/Xuina.js"></script>
+  </body>
+</html>
